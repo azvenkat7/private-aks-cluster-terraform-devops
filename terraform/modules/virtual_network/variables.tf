@@ -37,6 +37,7 @@ variable "resource_group_name" {
 variable "location" {
   description = "Location in which to deploy the network"
   type        = string
+default = "East US"
 }
 
 variable "vnet_name" {
