@@ -6,7 +6,6 @@ variable "name" {
 variable "resource_group_name" {
   description = "(Required) Specifies the name of the resource group."
   type        = string
-  default = iac_group
 }
 
 variable "resource_group_id" {
@@ -17,13 +16,11 @@ variable "resource_group_id" {
 variable "location" {
   description = "(Required) Specifies the location where the AKS cluster will be deployed."
   type        = string
-  default = East US
 }
 
 variable "dns_prefix" {
   description = "(Optional) DNS prefix specified when creating the managed cluster. Changing this forces a new resource to be created."
   type        = string
-  default = "aks"
 }
 
 variable "private_cluster_enabled" {
