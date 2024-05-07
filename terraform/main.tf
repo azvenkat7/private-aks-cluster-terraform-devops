@@ -413,12 +413,12 @@ resource "azurerm_api_management" "apim" {
   sku_capacity         = 1
 
   virtual_network_configuration {
-    subnet_id = data.azurerm_virtual_network.existing_vnet.subnets[0].id
+    subnet_id = data.azurerm_virtual_network.existing_vnet.subnets[1].id
   }
 }
 
 output "apim_id" {
-  value = azurerm_api_management.example.id
+  value = azurerm_api_management.apim.id
 }
 
 
