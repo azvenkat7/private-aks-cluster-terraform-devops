@@ -416,8 +416,7 @@ resource "azurerm_api_management" "apim" {
   publisher_name      = "devvenka"
   publisher_email     = "venkat776063@outlook.com"
 
-  sku_name             = "Consumption"
-  sku_capacity         = 1
+  sku_name             = "Consumption_0"
 
   virtual_network_configuration {
     subnet_id = data.azurerm_subnet.subnetapi.id
