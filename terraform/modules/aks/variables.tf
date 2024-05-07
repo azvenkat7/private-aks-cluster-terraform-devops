@@ -6,6 +6,7 @@ variable "name" {
 variable "resource_group_name" {
   description = "(Required) Specifies the name of the resource group."
   type        = string
+  default = "iac_group"
 }
 
 variable "resource_group_id" {
@@ -16,11 +17,13 @@ variable "resource_group_id" {
 variable "location" {
   description = "(Required) Specifies the location where the AKS cluster will be deployed."
   type        = string
+  default = "East US
 }
 
 variable "dns_prefix" {
   description = "(Optional) DNS prefix specified when creating the managed cluster. Changing this forces a new resource to be created."
   type        = string
+  default = "aks"
 }
 
 variable "private_cluster_enabled" {
@@ -259,6 +262,7 @@ variable "admin_username" {
 variable "ssh_public_key" {
   description = "(Required) Specifies the SSH public key used to access the cluster. Changing this forces a new resource to be created."
   type        = string
+  default = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDjLxAXbmAVVWvZxCYgJ9vVatVERtdJc8e6N+vEMCSLfg094d4C1aRXirv2m/rY06hI+IWXzdRu25G9LZvDkyKuv7JVKbQvT722PgWnWFqorh/BxburT469qiMO3ajEgeq/JkNgJRBQBh1VQjlaF8wzAKdU62IVwM27YaDQ5Nb3H+nfoA7eS40CSlr0UjcWph/V1/7uZwO/KJLZtnC9v8rBS0tJWi5/+6QRvcqqOhO5lx7lFAW5TU2tzklu8CkIKmiBdDOW6qDpKA6vIcVQxunjrf1PnM3wAuMAT7FcS2yAOlrEwMsQJi929+FxwG2jJWJrSWHfJ3jlkR70FoFivDastIPZLb2Ks/Ffq/pla4w+FnT10sg980bVtNMZtvUhKsyv28hNx1f9WBNpCoj+G5x4odNgozuZL6pesPlJlmEHM12KBfKcTjf+1H/gbrKUSqgYNATFLG0veT3UH6ziZOpabakfkl+c+nwdeMyCbpv/vZDGmSYkU1fmx+IFm3RxqAk= generated-by-azure"
 }
 
 variable "keda_enabled" {
