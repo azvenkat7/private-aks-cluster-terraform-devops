@@ -83,6 +83,12 @@ module "aks_network" {
       address_prefixes : var.vm_subnet_address_prefix
       private_endpoint_network_policies_enabled : true
       private_link_service_network_policies_enabled : false
+    },
+    {
+      name : apim_subnet
+      address_prefixes : var.vm_subnet_address_prefix
+      private_endpoint_network_policies_enabled : true
+      private_link_service_network_policies_enabled : false
     }
   ]
 }
@@ -413,7 +419,7 @@ resource "azurerm_api_management" "apim" {
   sku_capacity         = 1
 
   virtual_network_configuration {
-    subnet_id = data.azurerm_virtual_network.existing_vnet.subnets[1].id
+    subnet_id = data.azurerm_virtual_network.existing_vnet.apim_subnet.id
   }
 }
 
