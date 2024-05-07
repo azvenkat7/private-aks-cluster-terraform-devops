@@ -682,3 +682,19 @@ variable "http_application_routing_enabled" {
   type        = bool
   default     = false
 }
+
+variable "default_node_pool_node_labels" {
+  description = "Labels to be applied to nodes in the default node pool."
+  type        = map(string)
+  default     = {}
+}
+
+variable "default_node_pool_node_taints" {
+  description = "Taints to be applied to nodes in the default node pool."
+  type        = list(object({
+    key    = string
+    value  = string
+    effect = string
+  }))
+  default     = []
+}
