@@ -403,28 +403,4 @@ module "aks_monitoring" {
   source                         = "./modules/monitoring"
 }
 
-data "azurerm_subnet" "subnetapi" {
-  name                 = "apim_subnet"
-  virtual_network_name = "AksVNet"
-  resource_group_name  = "rg1"
-}
-
-resource "azurerm_api_management" "apim" {
-  name                = "ba-apim"
-  location            = "East US"  
-  resource_group_name = "rg1"
-  publisher_name      = "devvenka"
-  publisher_email     = "venkat776063@outlook.com"
-
-  sku_name             = "Consumption_0"
-
-  virtual_network_configuration {
-    subnet_id = data.azurerm_subnet.subnetapi.id
-  }
-}
-
-output "apim_id" {
-  value = azurerm_api_management.apim.id
-}
-
 
