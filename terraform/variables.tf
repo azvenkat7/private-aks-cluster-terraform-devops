@@ -23,13 +23,13 @@ variable "solution_plan_map" {
 
 variable "location" {
   description = "Specifies the location for the resource group and all the resources"
-  default     = "northeurope"
+  default     = "East US"
   type        = string
 }
 
 variable "resource_group_name" {
   description = "Specifies the resource group name"
-  default     = "BaboRG"
+  default     = "iac_group"
   type        = string
 }
 
