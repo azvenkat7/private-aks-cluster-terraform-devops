@@ -1,3 +1,33 @@
+variable "subnets" {
+  description = "List of subnet configurations"
+  type        = list(object({
+    name                                        = string
+    address_prefixes                            = list(string)
+    private_endpoint_network_policies_enabled   = bool
+    private_link_service_network_policies_enabled = bool
+  }))
+  default = [
+    {
+      name                                        = "subnet1"
+      address_prefixes                            = ["10.0.1.0/24"]
+      private_endpoint_network_policies_enabled   = true
+      private_link_service_network_policies_enabled = true
+    },
+    {
+      name                                        = "subnet2"
+      address_prefixes                            = ["10.0.2.0/24"]
+      private_endpoint_network_policies_enabled   = true
+      private_link_service_network_policies_enabled = true
+    },
+    {
+      name                                        = "subnet3"
+      address_prefixes                            = ["10.0.3.0/24"]
+      private_endpoint_network_policies_enabled   = true
+      private_link_service_network_policies_enabled = true
+    }
+  ]
+}
+
 variable "resource_group_name" {
   description = "Resource Group name"
   type        = string
@@ -18,16 +48,6 @@ variable "vnet_name" {
 variable "address_space" {
   description = "VNET address space"
   type        = list(string)
-}
-
-variable "subnets" {
-  description = "Subnets configuration"
-  type = list(object({
-    name                                           = string
-    address_prefixes                               = list(string)
-    private_endpoint_network_policies_enabled      = bool
-    private_link_service_network_policies_enabled  = bool
-  }))
 }
 
 variable "tags" {
