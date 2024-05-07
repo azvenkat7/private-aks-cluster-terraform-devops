@@ -179,7 +179,7 @@ variable "default_node_pool_os_disk_type" {
 variable "default_node_pool_max_count" {
   description = "(Required) The maximum number of nodes which should exist within this Node Pool. Valid values are between 0 and 1000 and must be greater than or equal to min_count."
   type          = number
-  default       = 1
+  default       = 2
 }
 
 variable "default_node_pool_min_count" {
