@@ -392,3 +392,12 @@ module "blob_private_endpoint" {
   private_dns_zone_group_name    = "BlobPrivateDnsZoneGroup"
   private_dns_zone_group_ids     = [module.blob_private_dns_zone.id]
 }
+
+module "aks_monitoring" {
+  source                         = "./modules/monitoring"
+  name                           = "${title(module.monitoring.name)}monitoring"
+  location                       = var.location
+  resource_group_name            = azurerm_resource_group.rg.name
+}
+
+
