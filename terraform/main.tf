@@ -84,12 +84,6 @@ module "aks_network" {
       private_endpoint_network_policies_enabled : true
       private_link_service_network_policies_enabled : false
     },
-    {
-      name : apim_subnet
-      address_prefixes : var.vm_subnet_address_prefix
-      private_endpoint_network_policies_enabled : true
-      private_link_service_network_policies_enabled : false
-    }
   ]
 }
 
