@@ -214,7 +214,7 @@ variable "default_node_pool_enable_node_public_ip" {
 variable "default_node_pool_max_pods" {
   description = "(Optional) The maximum number of pods that can run on each agent. Changing this forces a new resource to be created."
   type          = number
-  default       = 50
+  default       = 2
 }
 
 variable "system_node_pool_node_labels" {
@@ -304,7 +304,7 @@ variable "additional_node_pool_enable_node_public_ip" {
 variable "additional_node_pool_max_pods" {
   description = "(Optional) The maximum number of pods that can run on each agent. Changing this forces a new resource to be created."
   type          = number
-  default       = 50
+  default       = 2
 }
 
 variable "additional_node_pool_mode" {
@@ -346,19 +346,19 @@ variable "additional_node_pool_priority" {
 variable "additional_node_pool_max_count" {
   description = "(Required) The maximum number of nodes which should exist within this Node Pool. Valid values are between 0 and 1000 and must be greater than or equal to min_count."
   type          = number
-  default       = 10
+  default       = 3
 }
 
 variable "additional_node_pool_min_count" {
   description = "(Required) The minimum number of nodes which should exist within this Node Pool. Valid values are between 0 and 1000 and must be less than or equal to max_count."
   type          = number
-  default       = 3
+  default       = 1
 }
 
 variable "additional_node_pool_node_count" {
   description = "(Optional) The initial number of nodes which should exist within this Node Pool. Valid values are between 0 and 1000 and must be a value in the range min_count - max_count."
   type          = number
-  default       = 3
+  default       = 1
 }
 
 variable "domain_name_label" {
