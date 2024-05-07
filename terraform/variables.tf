@@ -530,7 +530,7 @@ variable "storage_account_replication_type" {
 variable "key_vault_name" {
   description = "Specifies the name of the key vault."
   type        = string
-  default     = "BaboAksKeyVault"
+  default     = "BaboAksKeyVault776063"
 }
 
 variable "key_vault_sku_name" {
