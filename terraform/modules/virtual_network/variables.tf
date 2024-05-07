@@ -1,6 +1,7 @@
 variable "resource_group_name" {
   description = "Resource Group name"
   type        = string
+  default = "iac_group"
 }
 
 variable "location" {
@@ -11,6 +12,7 @@ variable "location" {
 variable "vnet_name" {
   description = "VNET name"
   type        = string
+  default = "ba-vnet"
 }
 
 variable "address_space" {
