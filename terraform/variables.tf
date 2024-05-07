@@ -29,7 +29,7 @@ variable "location" {
 
 variable "resource_group_name" {
   description = "Specifies the resource group name"
-  default     = "iac_group"
+  default     = "rg1"
   type        = string
 }
 
