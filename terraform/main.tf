@@ -395,9 +395,6 @@ module "blob_private_endpoint" {
 
 module "aks_monitoring" {
   source                         = "./modules/monitoring"
-  name                           = "${title(module.monitoring.name)}monitoring"
-  location                       = var.location
-  resource_group_name            = azurerm_resource_group.rg.name
 }
 
 
