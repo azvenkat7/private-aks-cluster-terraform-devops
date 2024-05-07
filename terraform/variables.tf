@@ -129,7 +129,7 @@ variable "sku_tier" {
 
 variable "kubernetes_version" {
   description = "Specifies the AKS Kubernetes version"
-  default     = "1.28.1"
+  default     = "1.24.0"
   type        = string
 }
 
@@ -280,7 +280,7 @@ variable "additional_node_pool_vm_size" {
 variable "additional_node_pool_availability_zones" {
   description = "(Optional) A list of Availability Zones where the Nodes in this Node Pool should be created in. Changing this forces a new resource to be created."
   type        = list(string)
-  default = ["1", "2", "3"]
+  default = ["2", "3"]
 }
 
 variable "additional_node_pool_enable_auto_scaling" {
