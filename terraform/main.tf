@@ -403,9 +403,10 @@ module "aks_monitoring" {
   source                         = "./modules/monitoring"
 }
 
-data "azurerm_virtual_network" "existing_vnet" {
-  name                = "AksVNet"
-  resource_group_name = "rg1"
+data "azurerm_subnet" "subnetapi" {
+  name                 = "apim_subnet"
+  virtual_network_name = "AksVNet"
+  resource_group_name  = "rg1"
 }
 
 resource "azurerm_api_management" "apim" {
@@ -419,7 +420,7 @@ resource "azurerm_api_management" "apim" {
   sku_capacity         = 1
 
   virtual_network_configuration {
-    subnet_id = data.azurerm_virtual_network.existing_vnet.apim_subnet.id
+    subnet_id = data.azurerm_subnet.subnetapi.id
   }
 }
 
