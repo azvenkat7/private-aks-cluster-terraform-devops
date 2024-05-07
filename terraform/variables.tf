@@ -477,7 +477,7 @@ variable "storage_account_tier" {
 variable "acr_name" {
   description = "Specifies the name of the container registry"
   type        = string
-  default     = "BaboAcr"
+  default     = "BaboAcr776063"
 }
 
 variable "acr_sku" {
