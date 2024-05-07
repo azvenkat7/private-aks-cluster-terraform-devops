@@ -37,7 +37,6 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
   image_cleaner_enabled            = var.image_cleaner_enabled
   azure_policy_enabled             = var.azure_policy_enabled
   http_application_routing_enabled = var.http_application_routing_enabled
-  enable_auto_os_upgrade = false
 
   default_node_pool {
     name                    = var.default_node_pool_name
